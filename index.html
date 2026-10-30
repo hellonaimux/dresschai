@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DressChai — Coming Soon</title>
+<meta name="description" content="DressChai: বাংলাদেশের নতুন ও pre-loved পোশাক কেনাবেচার মার্কেটপ্লেস। খুব শিগগিরই আসছে।">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👗</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6f1;--ink:#1d1a17;--muted:#6b625a;--accent:#e4572e;--accent2:#7b4bff;--card:rgba(255,255,255,.65);--line:rgba(29,26,23,.12);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121014;--ink:#f6efe8;--muted:#a79d93;--accent:#ff7a4d;--accent2:#9b7bff;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121014;--ink:#f6efe8;--muted:#a79d93;--accent:#ff7a4d;--accent2:#9b7bff;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:'Hind Siliguri',system-ui,-apple-system,'Segoe UI',sans-serif;overflow-x:hidden;position:relative}
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.55;z-index:0;animation:float 14s ease-in-out infinite}
+.b1{width:46vmax;height:46vmax;background:var(--accent);top:-18vmax;left:-14vmax}
+.b2{width:40vmax;height:40vmax;background:var(--accent2);bottom:-16vmax;right:-12vmax;animation-delay:-6s}
+@keyframes float{50%{transform:translate(4vmax,3vmax) scale(1.08)}}
+main{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 20px;gap:22px}
+.logo{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,6vw,2.8rem);font-weight:600;letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);backdrop-filter:blur(10px);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(1.6)}}
+h1{font-family:'Fraunces','Hind Siliguri',Georgia,serif;font-weight:600;font-size:clamp(2.4rem,9vw,5.4rem);line-height:1.08;margin:0;letter-spacing:-.025em;max-width:15ch}
+h1 em{font-style:italic;font-weight:500;background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+p.sub{max-width:54ch;margin:0;color:var(--muted);font-size:clamp(1rem,2.4vw,1.2rem);line-height:1.65}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px}
+.chip{padding:11px 20px;border-radius:14px;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(10px);font-weight:500;transition:transform .25s}
+.chip:hover{transform:translateY(-4px) rotate(-1deg)}
+.foot{margin-top:10px;font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<main>
+  <div class="logo">Dress<span>Chai</span></div>
+  <div class="pill"><i class="dot"></i> Coming Soon</div>
+  <h1>পোশাকের <em>নতুন ঠিকানা</em> আসছে</h1>
+  <p class="sub">নতুন ও pre-loved পোশাক কিনুন, বিক্রি করুন, আর আপনার ad পৌঁছে দিন হাজারো মানুষের কাছে। বাংলাদেশের সহজ, আধুনিক fashion marketplace।</p>
+  <div class="chips">
+    <div class="chip">🛍️ Buy</div>
+    <div class="chip">✨ Sell</div>
+    <div class="chip">🚀 Featured Ads</div>
+  </div>
+  <div class="foot">© 2026 DressChai · Made in Bangladesh</div>
+</main>
+</body>
+</html>
