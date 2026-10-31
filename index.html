@@ -39,8 +39,8 @@ section,header,footer{width:100%}
 .nav-search{display:none}
 .nav-r{display:flex;align-items:center;flex:1;justify-content:flex-end}
 .lang{display:none}
-.ibtn{position:relative;display:flex;align-items:center;padding:12px}
-.ibtn img{width:16px;height:16px}
+.ibtn{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:10px}
+.ibtn img{width:20px;height:20px}
 .ibtn .dot{position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#e4257b}
 .pill{display:flex;align-items:center;gap:8px;height:48px;background:var(--d5);border:1px solid var(--d10);border-radius:999px;padding:12px 16px;color:#746863;white-space:nowrap}
 .pill img{width:16px;height:16px;flex:none}
@@ -185,6 +185,7 @@ section,header,footer{width:100%}
   .lang{display:flex;align-items:center;gap:8px;font-family:'Urbanist','General Sans',sans-serif;font-weight:600;font-size:16px;line-height:20px;color:var(--title)}
   .lang img{width:20px;height:20px}
   .nav-r{flex:none}
+  .ibtn{width:auto;height:auto;padding:12px}
   .ibtn img{width:24px;height:24px}
   .mob-only{display:none}
   .btn{height:56px}
@@ -273,7 +274,7 @@ section,header,footer{width:100%}
 <header class="top">
   <div class="nav">
     <div class="nav-l">
-      <a class="ibtn mob-only" href="#" aria-label="Menu"><img src="assets/menu.svg" alt=""></a>
+      <a class="ibtn mob-only" href="#" aria-label="Menu"><img src="assets/m-menu.svg" alt=""></a>
       <a class="logo" href="/"><picture><source media="(max-width:899px)" srcset="assets/logo-m.svg"><img src="assets/logo.svg" alt="DressChai"></picture></a>
       <div class="nav-search">
         <label class="pill search"><img src="assets/search-sm.svg" alt=""><span>Search dresses...</span></label>
@@ -282,9 +283,9 @@ section,header,footer{width:100%}
     </div>
     <div class="nav-r">
       <a class="lang" href="#"><img src="assets/globe.svg" alt="">বাংলা</a>
-      <a class="ibtn mob-only" href="#" aria-label="Search"><img src="assets/search-sm.svg" alt=""></a>
-      <a class="ibtn" href="#" aria-label="Account"><picture><source media="(max-width:899px)" srcset="assets/user-m.svg"><img src="assets/user.svg" alt=""></picture></a>
-      <a class="ibtn" href="#" aria-label="Saved"><picture><source media="(max-width:899px)" srcset="assets/heart-m.svg"><img src="assets/heart-nav.svg" alt=""></picture><span class="dot"></span></a>
+      <a class="ibtn mob-only" href="#" aria-label="Search"><img src="assets/m-search.svg" alt=""></a>
+      <a class="ibtn" href="#" aria-label="Account"><picture><source media="(max-width:899px)" srcset="assets/m-user.svg"><img src="assets/user.svg" alt=""></picture></a>
+      <a class="ibtn" href="#" aria-label="Saved"><picture><source media="(max-width:899px)" srcset="assets/m-heart.svg"><img src="assets/heart-nav.svg" alt=""></picture><span class="dot"></span></a>
     </div>
   </div>
 </header>
