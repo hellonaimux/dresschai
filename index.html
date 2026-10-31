@@ -7,7 +7,7 @@
 <meta name="description" content="DressChai: বাংলাদেশের নতুন ও pre-loved পোশাক কেনাবেচার মার্কেটপ্লেস।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&family=Hind+Siliguri:wght@700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&family=Hind+Siliguri:wght@600;700&family=Instrument+Serif&family=Urbanist:wght@600&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
 <style>
 :root{--pink:#ff2989;--pink5:#fef1f8;--pink10:#fee5f2;--title:#0e0e11;--para:#2d2d2d;--d5:#f3f3f5;--d10:#e7e7e8;--d50:#88898b;--bg2:#fdf3f6;--pad:16px;--py:48px}
@@ -32,28 +32,34 @@ section,header,footer{width:100%}
 .btn-white{background:#fff;color:var(--title)}
 
 /* header */
-.top{background:#fff;border-bottom:1px solid var(--d10);display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px}
+.top{background:#fff;border-bottom:1px solid var(--d10);padding:16px}
+.nav{display:flex;align-items:center;gap:8px;max-width:1440px;margin:0 auto}
 .logo img{height:24px;width:auto}
-.actions{display:flex;align-items:center}
-.ibtn{position:relative;display:flex;padding:12px}
+.nav-l{display:flex;align-items:center;gap:8px}
+.nav-search{display:none}
+.nav-r{display:flex;align-items:center;flex:1;justify-content:flex-end}
+.lang{display:none}
+.ibtn{position:relative;display:flex;align-items:center;padding:12px}
 .ibtn img{width:16px;height:16px}
 .ibtn .dot{position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#e4257b}
-.srow{grid-column:1/3;display:flex;gap:16px;align-items:center}
-.pill{display:flex;align-items:center;gap:8px;background:var(--d5);border:1px solid var(--d10);border-radius:999px;padding:12px 16px;color:#746863;white-space:nowrap}
+.pill{display:flex;align-items:center;gap:8px;height:48px;background:var(--d5);border:1px solid var(--d10);border-radius:999px;padding:12px 16px;color:#746863;white-space:nowrap}
 .pill img{width:16px;height:16px;flex:none}
 .pill.search{flex:1;min-width:0}
-.pill.loc{width:132px;justify-content:space-between}
-.pill.loc span{display:flex;gap:8px;align-items:center;flex:1}
+.pill.loc{width:160px;flex:none}
+.pill.loc .in{display:flex;gap:8px;align-items:center;flex:1;min-width:0}
+.pill.loc .in span{overflow:hidden;text-overflow:ellipsis}
 
 /* hero */
-.hero{position:relative;height:590px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:40px;padding:48px 16px;background:linear-gradient(to bottom,#fcf1f4,#fce2ee 41.729%,#f9f1f5);color:#fff}
-.hero .bg{position:absolute;height:38.64%;left:-10.13%;width:120.26%;top:0;object-fit:cover}
-.hero .shade{position:absolute;left:0;bottom:0;width:100%;height:569px;background:linear-gradient(to bottom,rgba(0,0,0,0) 13.972%,#000 36.116%)}
-.hero>*:not(img):not(.shade){position:relative}
-.htext{display:flex;flex-direction:column;gap:12px}
-.htext h1{font-family:'Hind Siliguri',sans-serif;font-weight:700;font-size:39px;line-height:1.2}
-.hbtns{display:flex;flex-direction:column;gap:12px}
-.btn-line{border:1px solid #fff;color:#fff}
+.hero{background:#bea5ab;height:680px;padding:16px}
+.hero-in{height:100%;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;justify-content:center}
+.hero-img{flex:1 1 0;min-height:0;position:relative;overflow:hidden}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-card{background:#fffdfb;display:flex;flex-direction:column;gap:24px;padding:16px;border-radius:6px 30px 30px 30px;width:100%}
+.htext{display:flex;flex-direction:column;gap:8px}
+.htext h1{font-family:'Hind Siliguri',sans-serif;font-weight:600;font-size:32px;line-height:1.2;color:var(--title)}
+.htext p{font-size:16px;line-height:1.5;color:var(--para)}
+.hbtns{display:flex;flex-direction:column;gap:8px;justify-content:center}
+.btn-outline{border:1px solid #171719;color:var(--title);backdrop-filter:blur(8px)}
 
 /* features */
 .feats{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;padding:48px 16px;border-bottom:1px solid var(--d10)}
@@ -166,32 +172,32 @@ section,header,footer{width:100%}
 /* ===== desktop ===== */
 @media (min-width:900px){
   :root{--pad:clamp(32px,5.556vw,80px);--py:96px}
-  .m,.m-only-cnt,.nm{display:none!important}
+  .m,.m-only-cnt,.nm,.mob-only{display:none!important}
   .d{display:inline}.nd{display:inline}
   .sec-head{gap:16px}
   .sec-head h2{font-size:48px}
   .sec-head p{font-size:18px}
-  .top{display:flex;height:96px;padding:24px var(--pad);gap:64px}
-  .top .logo{order:1}.top .logo img{height:32px}
-  .srow{order:2;grid-column:auto;flex:1;max-width:616px;gap:16px}
-  .pill.search{max-width:440px}
-  .pill.loc{width:160px;flex:none}
-  .actions{order:3;margin-left:auto}
+  .top{height:96px;padding:24px var(--pad)}
+  .nav{gap:24px}
+  .nav-l{flex:1;gap:64px}
+  .logo img{height:32px}
+  .nav-search{display:flex;gap:16px;align-items:center;width:616px;max-width:100%;flex:0 1 616px;min-width:0}
+  .lang{display:flex;align-items:center;gap:8px;font-family:'Urbanist','General Sans',sans-serif;font-weight:600;font-size:16px;line-height:20px;color:var(--title)}
+  .lang img{width:20px;height:20px}
+  .nav-r{flex:none}
   .ibtn img{width:24px;height:24px}
-  .ibtn.u img{content:url(assets/user.svg)}
-  .hero{height:556px;padding:120px var(--pad);justify-content:flex-start;background:none}
-  .hero .bg{height:100%;width:100%;left:0;top:0}
-  .hero .shade{display:none}
-  .hero .inner{width:100%;max-width:1280px;margin:0 auto}
-  .hero .col{width:736px;max-width:100%;display:flex;flex-direction:column;gap:48px}
-  .htext{gap:24px}
-  .htext h1{font-family:'Baloo Da 2','Hind Siliguri',sans-serif;font-size:56px}
-  .htext h1 .hl{color:var(--pink)}
-  .htext p{font-size:18px;width:418px;max-width:100%}
-  .hbtns{flex-direction:row;gap:16px}
+  .mob-only{display:none}
   .btn{height:56px}
+  .hero{height:680px;padding:0 var(--pad)}
+  .hero-in{flex-direction:row;align-items:center;gap:40px}
+  .hero-card{order:-1;flex:0 1 676px;min-width:0;gap:40px;padding:40px;border-radius:12px 60px 60px 60px;width:auto}
+  .htext{gap:16px}
+  .htext h1{font-size:48px}
+  .htext p{font-size:18px;max-width:463px}
+  .hbtns{flex-direction:row;gap:16px;justify-content:flex-start}
   .hbtns .btn{width:auto}
-  .btn-line{background:rgba(0,0,0,.16);backdrop-filter:blur(8px)}
+  .hero-img{flex:1 1 724px;min-width:0;max-width:724px;height:100%}
+  .hero-img img{inset:auto;left:0;top:6.96%;height:93.06%;width:100%;object-fit:fill}
   .feats{display:flex;gap:24px;padding:48px var(--pad)}
   .feats .wrapf{display:flex;gap:24px;width:100%;max-width:1280px;margin:0 auto}
   .feats{justify-content:center}
@@ -265,30 +271,38 @@ section,header,footer{width:100%}
 <body>
 
 <header class="top">
-  <a class="logo" href="/"><picture><source media="(max-width:899px)" srcset="assets/logo-m.svg"><img src="assets/logo.svg" alt="DressChai"></picture></a>
-  <div class="actions">
-    <a class="ibtn u" href="#" aria-label="Account"><picture><source media="(max-width:899px)" srcset="assets/user-m.svg"><img src="assets/user.svg" alt=""></picture></a>
-    <a class="ibtn" href="#" aria-label="Saved"><picture><source media="(max-width:899px)" srcset="assets/heart-m.svg"><img src="assets/heart-nav.svg" alt=""></picture><span class="dot"></span></a>
-  </div>
-  <div class="srow">
-    <label class="pill search"><img src="assets/search-sm.svg" alt=""><span>Search dresses...</span></label>
-    <div class="pill loc"><span><img src="assets/map-pin-sm.svg" alt="">Dhaka</span><img src="assets/chevron-down.svg" alt=""></div>
+  <div class="nav">
+    <div class="nav-l">
+      <a class="ibtn mob-only" href="#" aria-label="Menu"><img src="assets/menu.svg" alt=""></a>
+      <a class="logo" href="/"><picture><source media="(max-width:899px)" srcset="assets/logo-m.svg"><img src="assets/logo.svg" alt="DressChai"></picture></a>
+      <div class="nav-search">
+        <label class="pill search"><img src="assets/search-sm.svg" alt=""><span>Search dresses...</span></label>
+        <div class="pill loc"><div class="in"><img src="assets/map-pin-sm.svg" alt=""><span>Dhaka</span></div><img src="assets/chevron-down.svg" alt=""></div>
+      </div>
+    </div>
+    <div class="nav-r">
+      <a class="lang" href="#"><img src="assets/globe.svg" alt="">বাংলা</a>
+      <a class="ibtn mob-only" href="#" aria-label="Search"><img src="assets/search-sm.svg" alt=""></a>
+      <a class="ibtn" href="#" aria-label="Account"><picture><source media="(max-width:899px)" srcset="assets/user-m.svg"><img src="assets/user.svg" alt=""></picture></a>
+      <a class="ibtn" href="#" aria-label="Saved"><picture><source media="(max-width:899px)" srcset="assets/heart-m.svg"><img src="assets/heart-nav.svg" alt=""></picture><span class="dot"></span></a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <img class="bg" src="assets/hero.png" alt="">
-  <div class="shade"></div>
-  <div class="inner"><div class="col">
-    <div class="htext">
-      <h1><span class="hl">পুরাতন জামা</span> বেচে দিন, পছন্দমতো নতুন জামা খুঁজে নিন</h1>
-      <p><span class="m">Thousands of beautiful outfits are available for rent and sale. Stay stylish, save money</span><span class="d">আপনার আলমারির পুরাতন জামা বিক্রি করুন, অথবা সাশ্রয়ী দামে পছন্দের পোশাক খুঁজুন</span></p>
+  <div class="hero-in">
+    <div class="hero-img"><img src="assets/hero-model.png" alt=""></div>
+    <div class="hero-card">
+      <div class="htext">
+        <h1>পুরাতন জামা বেচে দিন, পছন্দমতো নতুন জামা খুঁজে নিন</h1>
+        <p>আপনার আলমারির পুরাতন জামা বিক্রি করুন, অথবা সাশ্রয়ী দামে পছন্দের পোশাক খুঁজুন একই প্ল্যাটফর্মে</p>
+      </div>
+      <div class="hbtns">
+        <a class="btn btn-primary" href="#"><img src="assets/search-btn.svg" alt="">পোশাক খুঁজুন</a>
+        <a class="btn btn-outline" href="#">ফ্রি বিজ্ঞাপন দিন</a>
+      </div>
     </div>
-    <div class="hbtns">
-      <a class="btn btn-primary" href="#"><img src="assets/search-btn.svg" alt=""><span class="m">Explore Dresses</span><span class="d">পোশাক খুঁজুন</span></a>
-      <a class="btn btn-line" href="#"><span class="m">Sell Your Dress</span><span class="d">ফ্রি বিজ্ঞাপন দিন</span></a>
-    </div>
-  </div></div>
+  </div>
 </section>
 
 <section class="feats"><div class="wrapf"><div class="feat"><span class="ficon"><img src="assets/f-afford.svg" alt=""></span><div><h3>Affordable</h3><p>Save money, look great</p></div></div><div class="feat"><span class="ficon"><img src="assets/f-trust.svg" alt=""></span><div><h3>Trusted Community</h3><p>Real people, real reviews</p></div></div><div class="feat"><span class="ficon"><img src="assets/f-sell.svg" alt=""></span><div><h3>Easy to Sell</h3><p>List in minutes</p></div></div><div class="feat"><span class="ficon"><img src="assets/f-wide.svg" alt=""></span><div><h3>Wide Choice</h3><p>Thousands of outfits</p></div></div></div></section>
