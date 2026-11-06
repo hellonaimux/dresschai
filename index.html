@@ -7,267 +7,9 @@
 <meta name="description" content="DressChai: বাংলাদেশের নতুন ও pre-loved পোশাক কেনাবেচার মার্কেটপ্লেস।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&family=Hind+Siliguri:wght@600;700&family=Instrument+Serif&family=Urbanist:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&family=Hind+Siliguri:wght@400;600;700&family=Instrument+Serif&family=Urbanist:wght@600&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
-<style>
-:root{--pink:#ff2989;--pink5:#fef1f8;--pink10:#fee5f2;--title:#0e0e11;--para:#2d2d2d;--d5:#f3f3f5;--d10:#e7e7e8;--d50:#88898b;--bg2:#fdf3f6;--pad:16px;--py:48px}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:#fff;color:var(--title);font-family:'General Sans','Hind Siliguri',system-ui,sans-serif;font-size:16px;line-height:1.5}
-img{display:block;max-width:none}
-h1,h2,h3,p{margin:0}
-a{color:inherit;text-decoration:none}
-button{font:inherit;border:0;background:none;cursor:pointer;padding:0}
-.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
-.d,.nd{display:none}
-.wrap{max-width:1280px;margin:0 auto}
-section,header,footer{width:100%}
-.sec{padding:var(--py) var(--pad)}
-.sec-head{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center}
-.sec-head h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:32px;line-height:1.2}
-.sec-head p{color:var(--para)}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 28px;border-radius:999px;font-weight:500;font-size:16px;line-height:1;white-space:nowrap;overflow:hidden}
-.btn img{width:24px;height:24px}
-.btn-primary{background:var(--pink);color:var(--pink5)}
-.btn-white{background:#fff;color:var(--title)}
-
-/* header */
-.top{background:#fff;border-bottom:1px solid var(--d10);padding:16px}
-.nav{display:flex;align-items:center;gap:8px;max-width:1440px;margin:0 auto}
-.logo img{height:24px;width:auto}
-.nav-l{display:flex;align-items:center;gap:8px}
-.nav-search{display:none}
-.nav-r{display:flex;align-items:center;flex:1;justify-content:flex-end}
-.lang{display:none}
-.ibtn{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:10px}
-.ibtn img{width:20px;height:20px}
-.ibtn .dot{position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#e4257b}
-.pill{display:flex;align-items:center;gap:8px;height:48px;background:var(--d5);border:1px solid var(--d10);border-radius:999px;padding:12px 16px;color:#746863;white-space:nowrap}
-.pill img{width:16px;height:16px;flex:none}
-.pill.search{flex:1;min-width:0}
-.pill.loc{width:160px;flex:none}
-.pill.loc .in{display:flex;gap:8px;align-items:center;flex:1;min-width:0}
-.pill.loc .in span{overflow:hidden;text-overflow:ellipsis}
-
-/* hero */
-.hero{background:#bea5ab;height:680px;padding:16px}
-.hero-in{height:100%;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;justify-content:center}
-.hero-img{flex:1 1 0;min-height:0;position:relative;overflow:hidden}
-.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-card{background:#fffdfb;display:flex;flex-direction:column;gap:24px;padding:16px;border-radius:6px 30px 30px 30px;width:100%}
-.htext{display:flex;flex-direction:column;gap:8px}
-.htext h1{font-family:'Hind Siliguri',sans-serif;font-weight:600;font-size:32px;line-height:1.2;color:var(--title)}
-.htext p{font-size:16px;line-height:1.5;color:var(--para)}
-.hbtns{display:flex;flex-direction:column;gap:8px;justify-content:center}
-.btn-outline{border:1px solid #171719;color:var(--title);backdrop-filter:blur(8px)}
-
-/* features */
-.feats{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;padding:48px 16px;border-bottom:1px solid var(--d10)}
-.feat{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
-.ficon{display:flex;padding:12px;border-radius:999px;background:var(--pink10)}
-.ficon img{width:18px;height:18px}
-.feat h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:20px;line-height:1.2}
-.feat p{font-size:14px;color:var(--para);margin-top:4px}
-
-.feats .wrapf{display:contents}
-/* categories */
-.cats{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
-.cat{position:relative;flex:1 1 148px;min-width:148px;height:200px;background:var(--d5);border-radius:8px;padding:16px;display:flex;align-items:flex-end;overflow:hidden}
-.cimg{position:absolute;aspect-ratio:1684/2227;top:16px;bottom:72px;left:calc(50% + .5px);transform:translateX(-50%)}
-.cimg>img{width:100%;height:100%;object-fit:cover}
-.crop{position:absolute;inset:0;overflow:hidden}
-.crop img{position:absolute;height:73.04%;left:-.26%;top:13.48%;width:100.51%}
-.ctext{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0}
-.cname{font-family:'Instrument Serif',Georgia,serif;font-size:20px;line-height:1.2;color:var(--title)}
-.cnt{font-size:12px;color:var(--para)}
-.cat .line{display:none}
-.m-only-cnt{font-size:12px;color:var(--para)}
-
-/* cards */
-.grid{display:flex;flex-wrap:wrap;gap:24px;margin-top:32px}
-.card{flex:1 1 150px;min-width:150px;display:flex;flex-direction:column;gap:16px}
-.thumb{position:relative;aspect-ratio:302/402;border-radius:8px;overflow:hidden}
-.ph{position:absolute;left:0;right:0;top:calc(50% - .16px);transform:translateY(-50%);aspect-ratio:30/40}
-.ph img,.ph picture{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.heart{position:absolute;right:8px;top:8px;display:flex;padding:12px;background:#fff;border-radius:999px}
-.heart img{width:16px;height:16px}
-.badge{position:absolute;left:8px;top:8px;background:#fff;color:#000;border-radius:4px;padding:3px 8px;font-size:10px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;line-height:1.5}
-.dots{display:flex;gap:4px;height:4px;padding:0 8px;margin-top:-8px}
-.dots i{flex:1;background:rgba(0,0,0,.04)}
-.dots i.on{background:rgba(0,0,0,.16)}
-.info{display:flex;flex-direction:column;gap:12px}
-.info h3{font-size:14px;font-weight:500;line-height:1.5;max-height:42px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.meta{display:flex;align-items:center;gap:12px}
-.price{font-family:'Instrument Serif',Georgia,serif;font-size:20px;line-height:1.2;white-space:nowrap}
-.loc{display:flex;align-items:center;gap:4px;min-width:0;font-size:12px;font-weight:500;color:var(--d50);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.loc img{width:14px;height:14px;flex:none}
-.more{margin-top:32px;width:100%}
-.bg2{background:var(--bg2)}
-
-/* CTA */
-.cta{position:relative;border-radius:20px;overflow:hidden;padding:32px 24px;display:flex;flex-direction:column;gap:24px;background:linear-gradient(to bottom,#ec6fa7,#ff2989);color:#fff}
-.cta>picture{position:absolute;inset:0;display:block}
-.cta>picture>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cta>*:not(picture){position:relative}
-.cta h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:32px;line-height:1.2;max-width:189px}
-.cta .ctext2{display:flex;flex-direction:column;gap:8px}
-.cta .ctext2 p{font-size:14px}
-.steps{display:flex;flex-direction:column;gap:12px}
-.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:16px;padding:16px;color:var(--title)}
-.strow{display:contents}
-.ico{display:flex;background:var(--pink);padding:8px;border-radius:8px}
-.ico img{width:20px;height:20px}
-.sbody{flex:1;min-width:0}
-.stitle{display:flex;justify-content:space-between}
-.step h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:20px;line-height:1.2;white-space:nowrap}
-.num{font-size:12px;font-weight:500;letter-spacing:.96px;text-transform:uppercase}
-.step p{font-size:14px;color:var(--para);margin-top:2px}
-.cta-top{display:contents}
-.ctext2{order:1}.steps{order:2}.ctabtn{order:3}
-.cta .btn{width:100%}
-
-/* testimonials */
-.thead h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:32px;line-height:1.2}
-.thead p{color:var(--para);margin-top:16px}
-.tcards{display:flex;flex-direction:column;gap:24px;margin-top:32px}
-.tcard{display:none;flex-direction:column;gap:24px;background:#fff;border-radius:16px;padding:24px}
-.tcard.show{display:flex}
-.stars{width:100px;height:20px}
-.quote{margin-top:12px;min-height:96px}
-.tcard footer{display:flex;gap:17px;align-items:center;border-top:1px solid var(--d5);padding-top:24px}
-.av{width:40px;height:40px;border-radius:999px;object-fit:cover}
-.tcard footer b{display:block;font-weight:500}
-.tcard footer span{font-size:14px;color:var(--d50)}
-.rating{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px}
-.rating .r1{display:flex;align-items:center;gap:8px}
-.rating .r1 img{width:120px;height:24px}
-.rating .r1 span{font-family:'Instrument Serif',Georgia,serif;font-size:24px;line-height:1.2}
-.rating p{font-size:18px;color:var(--para)}
-.arrows{display:flex;gap:24px;justify-content:center;margin-top:32px}
-.arrows.top{display:none}
-.arr{display:flex;padding:16px;background:#fff;border-radius:999px}
-.arr img{width:24px;height:24px}
-
-/* footer */
-.foot{padding:48px 16px}
-.foot .wrapf{display:flex;flex-direction:column;gap:32px}
-.ftop{display:flex;flex-direction:column;gap:32px}
-.fbrand{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
-.fbrand img.fl{width:166.173px;height:40px}
-.social{display:flex;gap:8px;align-items:flex-end}
-.social a{display:flex;padding:12px;border-radius:8px}
-.social a:first-child{background:var(--pink5)}
-.social img{width:16px;height:16px}
-.fcols{display:flex;flex-wrap:wrap;gap:32px 24px}
-.fbrand p{color:var(--para)}
-.fcol{flex:1 1 120px;min-width:120px;display:flex;flex-direction:column;gap:24px}
-.fcol h4{margin:0;font-size:14px;font-weight:500;line-height:1.2;letter-spacing:1.12px;text-transform:uppercase}
-.fcol ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;color:var(--para)}
-.fline{border-top:1px solid var(--d10)}
-.fbot{display:flex;flex-direction:column;gap:16px;align-items:center}
-.copy{font-size:12px;font-weight:500;letter-spacing:.96px;text-transform:uppercase;color:var(--d50);text-align:center}
-.wa{display:flex;gap:8px;align-items:center;font-size:12px}
-.wa img{width:16px;height:16px}
-
-/* ===== desktop ===== */
-@media (min-width:900px){
-  :root{--pad:clamp(32px,5.556vw,80px);--py:96px}
-  .m,.m-only-cnt,.nm,.mob-only{display:none!important}
-  .d{display:inline}.nd{display:inline}
-  .sec-head{gap:16px}
-  .sec-head h2{font-size:48px}
-  .sec-head p{font-size:18px}
-  .top{height:96px;padding:24px var(--pad)}
-  .nav{gap:24px}
-  .nav-l{flex:1;gap:64px}
-  .logo img{height:32px}
-  .nav-search{display:flex;gap:16px;align-items:center;width:616px;max-width:100%;flex:0 1 616px;min-width:0}
-  .lang{display:flex;align-items:center;gap:8px;font-family:'Urbanist','General Sans',sans-serif;font-weight:600;font-size:16px;line-height:20px;color:var(--title)}
-  .lang img{width:20px;height:20px}
-  .nav-r{flex:none}
-  .ibtn{width:auto;height:auto;padding:12px}
-  .ibtn img{width:24px;height:24px}
-  .mob-only{display:none}
-  .btn{height:56px}
-  .hero{height:680px;padding:0 var(--pad)}
-  .hero-in{flex-direction:row;align-items:center;gap:40px}
-  .hero-card{order:-1;flex:0 1 676px;min-width:0;gap:40px;padding:40px;border-radius:12px 60px 60px 60px;width:auto}
-  .htext{gap:16px}
-  .htext h1{font-size:48px}
-  .htext p{font-size:18px;max-width:463px}
-  .hbtns{flex-direction:row;gap:16px;justify-content:flex-start}
-  .hbtns .btn{width:auto}
-  .hero-img{flex:1 1 724px;min-width:0;max-width:724px;height:100%}
-  .hero-img img{inset:auto;left:0;top:6.96%;height:93.06%;width:100%;object-fit:fill}
-  .feats{display:flex;gap:24px;padding:48px var(--pad)}
-  .feats .wrapf{display:flex;gap:24px;width:100%;max-width:1280px;margin:0 auto}
-  .feats{justify-content:center}
-  .feat{flex:1;flex-direction:row;gap:20px;text-align:left}
-  .ficon{padding:16px}.ficon img{width:24px;height:24px}
-  .feat h3{font-size:24px}
-  .feat p{font-size:16px;margin-top:4px}
-  .cats{flex-wrap:nowrap;gap:16px;margin-top:64px}
-  .cat{flex:1;min-width:0;height:250px;padding:24px}
-  .cimg{top:20px;bottom:82px}
-  .cat.active{background:var(--pink5);border:1px solid rgba(0,0,0,.08)}
-  .cat.active .cimg{top:19px;bottom:81px}
-  .cat.active .cname{color:var(--pink)}
-  .cat.active .line{display:block;width:12px;height:2px;margin-top:2px}
-  .ctext{align-items:center;gap:2px}
-  .cnt{font-size:14px}
-  .grid{gap:24px;margin-top:64px;flex-wrap:nowrap}
-  .card{min-width:0;flex:1}
-  .card .heart{right:16px;top:16px}
-  .card .heart img{width:20px;height:20px}
-  .card:not(:first-child) .heart{display:none}
-  .badge{left:16px;top:16px;padding:5px 10px;font-size:12px;letter-spacing:.96px}
-  .info{gap:16px}
-  .info h3{font-size:18px;max-height:none;display:block;white-space:nowrap;text-overflow:ellipsis;-webkit-line-clamp:unset}
-  .meta{gap:16px}
-  .price{font-size:24px}
-  .loc{font-size:14px}.loc img{width:16px;height:16px}
-  .m-card{display:none}
-  .more{width:177px;margin:64px auto 0}
-  .latest{padding-bottom:0}
-  .cta{border-radius:24px;padding:64px;gap:64px}
-  .cta-top{display:flex;gap:64px;align-items:flex-end;order:1}
-  .steps{order:2}.ctext2{order:1}.ctabtn{order:2}
-  .cta .ctext2{flex:1}
-  .cta h2{font-size:48px;max-width:none;white-space:nowrap}
-  .cta .ctext2 p{font-size:16px;width:345px;max-width:100%}
-  .cta .btn{width:auto;flex:none}
-  .steps{flex-direction:row;gap:24px}
-  .step{flex:1;flex-direction:column;gap:34px;padding:24px;border-radius:16px}
-  .strow{display:flex;justify-content:space-between;align-items:center;width:100%}
-  .ico{padding:12px;border-radius:12px}
-  .num{font-size:14px;letter-spacing:1.12px;line-height:1.2}
-  .step h3{font-size:32px}
-  .step p{font-size:16px;margin-top:4px}
-  .sbody{width:100%}
-  .thead{display:flex;gap:64px;align-items:flex-end}
-  .thead>div:first-child{flex:1}
-  .thead h2{font-size:48px}
-  .thead p{font-size:18px;max-width:472px}
-  .arrows.top{display:flex;margin:0;gap:16px}
-  .arrows.bottom{display:none}
-  .tcards{flex-direction:row;gap:24px;margin-top:64px}
-  .tcard{display:flex;flex:1;padding:24px;gap:24px}
-  .stars{width:120px;height:24px}
-  .rating{flex-direction:row;justify-content:center;gap:24px;margin-top:48px}
-  .rating p{margin:0}
-  .foot{padding:80px var(--pad) 48px}
-  .foot .wrapf{max-width:1280px;margin:0 auto;width:100%;gap:48px}
-  .ftop{flex-direction:row;gap:132px;align-items:center}
-  .fbrand{flex:1}
-  .fcols{width:737px;max-width:60%;flex-wrap:nowrap;gap:24px}
-  .fbot{flex-direction:row;justify-content:space-between}
-  .copy{text-align:left}
-}
-@media (min-width:1200px){
-  :root{--py:128px}
-  .tcard{padding:40px}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -299,7 +41,7 @@ section,header,footer{width:100%}
         <p>আপনার আলমারির পুরাতন জামা বিক্রি করুন, অথবা সাশ্রয়ী দামে পছন্দের পোশাক খুঁজুন একই প্ল্যাটফর্মে</p>
       </div>
       <div class="hbtns">
-        <a class="btn btn-primary" href="#"><img src="assets/search-btn.svg" alt="">পোশাক খুঁজুন</a>
+        <a class="btn btn-primary" href="listing.html"><img src="assets/search-btn.svg" alt="">পোশাক খুঁজুন</a>
         <a class="btn btn-outline" href="#">ফ্রি বিজ্ঞাপন দিন</a>
       </div>
     </div>
@@ -340,7 +82,7 @@ section,header,footer{width:100%}
 <article class="card"><div class="thumb"><div class="ph"><picture><source media="(max-width:899px)" srcset="assets/latest-m-4.png"><img src="assets/latest-d-4.png" alt="Pre-loved dress" loading="lazy"></picture></div><button class="heart" aria-label="Save"><img src="assets/heart-card.svg" alt=""></button><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 1800</span><span class="loc"><img src="assets/pin-card.svg" alt="">Chattagram</span></div></div></article>
 <article class="card"><div class="thumb"><div class="ph"><picture><source media="(max-width:899px)" srcset="assets/latest-m-5.png"><img src="assets/latest-d-5.png" alt="Pre-loved dress" loading="lazy"></picture></div><button class="heart" aria-label="Save"><img src="assets/heart-card.svg" alt=""></button><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">TK. 1280</span><span class="loc"><img src="assets/pin-card.svg" alt="">Dhaka</span></div></div></article>
 <article class="card m-card"><div class="thumb"><div class="ph"><img src="assets/latest-m-6.png" alt="Pre-loved dress" loading="lazy"></div><button class="heart" aria-label="Save"><img src="assets/heart-card.svg" alt=""></button><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">TK. 1280</span><span class="loc"><img src="assets/pin-card.svg" alt="">Dhaka</span></div></div></article></div>
-    <a class="btn btn-primary more" href="#">View All Listings</a>
+    <a class="btn btn-primary more" href="listing.html">View All Listings</a>
   </div>
 </section>
 
@@ -394,7 +136,8 @@ section,header,footer{width:100%}
   function show(n){i=(n+cards.length)%cards.length;cards.forEach(function(c,k){c.classList.toggle('show',k===i)});}
   [].forEach.call(document.querySelectorAll('.prev'),function(b){b.addEventListener('click',function(){show(i-1)})});
   [].forEach.call(document.querySelectorAll('.next'),function(b){b.addEventListener('click',function(){show(i+1)})});
-  [].forEach.call(document.querySelectorAll('.heart'),function(b){b.addEventListener('click',function(){b.classList.toggle('on')})});
+  [].forEach.call(document.querySelectorAll('.heart'),function(b){b.addEventListener('click',function(e){e.stopPropagation();b.classList.toggle('on')})});
+  [].forEach.call(document.querySelectorAll('.card'),function(c){c.style.cursor='pointer';c.addEventListener('click',function(){location.href='details.html'})});
 })();
 </script>
 </body>
