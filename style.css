@@ -255,3 +255,7 @@ section,header,footer{width:100%}
   :root{--py:128px}
   .tcard{padding:40px}
 }
+
+.pill.search input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;color:var(--title);padding:0}
+.pill.search input::placeholder{color:#746863;opacity:1}
+.pill.search input::-webkit-search-cancel-button{display:none}

@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&family=Hind+Siliguri:wght@400;600;700&family=Instrument+Serif&family=PT+Serif&family=Urbanist:wght@600&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="pages.css?v=2">
 </head>
 <body>
 <header class="top">
@@ -18,27 +18,27 @@
       <a class="ibtn mob-only" href="#" aria-label="Menu"><img src="assets/m-menu.svg" alt=""></a>
       <a class="logo" href="/"><picture><source media="(max-width:899px)" srcset="assets/logo-m.svg"><img src="assets/logo.svg" alt="DressChai"></picture></a>
       <div class="nav-search">
-        <label class="pill search"><img src="assets/search-sm.svg" alt=""><span>Search dresses...</span></label>
+        <form class="pill search" action="listing.html" method="get" role="search"><img src="assets/search-sm.svg" alt=""><input type="search" name="q" placeholder="Search dresses..." aria-label="Search dresses"></form>
         <div class="pill loc"><div class="in"><img src="assets/map-pin-sm.svg" alt=""><span>Dhaka</span></div><img src="assets/chevron-down.svg" alt=""></div>
       </div>
     </div>
     <div class="nav-r">
       <a class="lang" href="#"><img src="assets/globe.svg" alt="">বাংলা</a>
-      <a class="ibtn mob-only" href="#" aria-label="Search"><img src="assets/m-search.svg" alt=""></a>
+      <a class="ibtn mob-only" href="listing.html" aria-label="Search"><img src="assets/m-search.svg" alt=""></a>
       <a class="ibtn" href="#" aria-label="Account"><picture><source media="(max-width:899px)" srcset="assets/m-user.svg"><img src="assets/user.svg" alt=""></picture></a>
       <a class="ibtn" href="#" aria-label="Saved"><picture><source media="(max-width:899px)" srcset="assets/m-heart.svg"><img src="assets/heart-nav.svg" alt=""></picture><span class="dot"></span></a>
     </div>
   </div>
 </header>
-<section class="dcrumb"><div class="pw"><nav class="crumbs"><a class="mute" href="/">Home</a><span>&gt;</span><a class="mute" href="listing.html">All dresses</a><span>&gt;</span><a href="listing.html">Weeding Wear</a></nav></div></section>
+<section class="dcrumb"><div class="pw"><nav class="crumbs"><a class="mute" href="/">Home</a><span>&gt;</span><a class="mute" href="listing.html">All dresses</a><span>&gt;</span><a href="listing.html" id="bc-cat">Weeding Wear</a></nav></div></section>
 <main class="dmain"><div class="pw">
   <div class="dtop">
     <div class="gallery"><div class="gmain"><img id="gimg" src="assets/lst-2.png" alt="Casual Summer Dress"></div><div class="gthumbs"><button class="gth" type="button" aria-label="Photo"><img src="assets/lst-2.png" alt=""></button><button class="gth" type="button" aria-label="Photo"><img src="assets/lst-2.png" alt=""></button><button class="gth" type="button" aria-label="Photo"><img src="assets/lst-2.png" alt=""></button><button class="gth" type="button" aria-label="Photo"><img src="assets/lst-2.png" alt=""></button></div></div>
     <div class="dinfo">
-      <div class="dtitle"><h1>Casual Summer Dress</h1>
-        <div class="pgroup"><div class="dprice">৳ 2300</div><div class="dloc"><span class="p"><img src="assets/pin-gray.svg" alt="">Dhanmondi, Dhaka</span><span class="sepdot"></span><span>1 day ago</span></div></div>
+      <div class="dtitle"><h1 id="dt">Casual Summer Dress</h1>
+        <div class="pgroup"><div class="dprice" id="dp">৳ 2300</div><div class="dloc"><span class="p"><img src="assets/pin-gray.svg" alt=""><span id="dloc">Dhanmondi, Dhaka</span></span><span class="sepdot"></span><span id="dago">1 day ago</span></div></div>
       </div>
-      <div class="specs"><div class="field"><span class="k">Brand</span><span class="v">Aarong</span></div><div class="field"><span class="k">Size</span><span class="v">36</span></div><div class="field"><span class="k">Condition</span><span class="v">Like New</span></div><div class="field"><span class="k">Category</span><span class="v">Weeding Wear</span></div></div>
+      <div class="specs"><div class="field"><span class="k">Brand</span><span class="v" id="f-brand">Aarong</span></div><div class="field"><span class="k">Size</span><span class="v" id="f-size">36</span></div><div class="field"><span class="k">Condition</span><span class="v" id="f-cond">Like New</span></div><div class="field"><span class="k">Category</span><span class="v" id="f-cat">Weeding Wear</span></div></div>
       <div class="contact">
         <a class="btn btn-wa" href="#"><span>Message on Whatsapp</span><img src="assets/whatsapp-w.svg" alt=""></a>
         <div class="phone"><div class="l"><img src="assets/phone.svg" alt=""><div class="t"><span class="k">Phone Number</span><span class="v">*********670</span></div></div><button class="btn-sm" type="button">Show Number</button></div>
@@ -46,18 +46,18 @@
     </div>
   </div>
   <div class="dbottom">
-    <div class="about"><h2>About this dress</h2><p>A beautifully kept dress, worn only 1-2 times. No stains or tears, freshly cleaned and stored carefully. Will be re-checked before delivery. Price is slightly negotiable.</p></div>
+    <div class="about"><h2>About this dress</h2><p id="ddesc">A beautifully kept dress, worn only 1-2 times. No stains or tears, freshly cleaned and stored carefully. Will be re-checked before delivery. Price is slightly negotiable.</p></div>
     <div class="seller">
-      <div class="srow2"><div class="sblock"><span class="k">Seller</span><div class="who"><img class="av40" src="assets/avatar-1.png" alt=""><div><b>Fatiama Rahman</b><small>Dhaka</small></div></div></div>
-        <div class="rate"><img src="assets/star.svg" alt=""><span class="n">4.8</span><span class="c">(3 reviews)</span></div></div>
+      <div class="srow2"><div class="sblock"><span class="k">Seller</span><div class="who"><img class="av40" id="s-av" src="assets/avatar-1.png" alt=""><div><b id="s-name">Fatiama Rahman</b><small id="s-city">Dhaka</small></div></div></div>
+        <div class="rate"><img src="assets/star.svg" alt=""><span class="n" id="s-rate">4.8</span><span class="c" id="s-rev">(3 reviews)</span></div></div>
       <div class="sline"></div>
-      <div class="stats"><div class="stat"><span class="k">Total Listings</span><span class="v">5</span></div><div class="stat"><span class="k">Member Since</span><span class="v">2023</span></div></div>
+      <div class="stats"><div class="stat"><span class="k">Total Listings</span><span class="v" id="s-list">5</span></div><div class="stat"><span class="k">Member Since</span><span class="v" id="s-since">2023</span></div></div>
     </div>
   </div>
 </div></main>
 <section class="rel"><div class="pw">
   <div class="relhead"><h2>Related Dresses</h2><div class="arrows2"><button class="arr2" type="button" aria-label="Previous"><img src="assets/arrow-left.svg" alt=""></button><button class="arr2" type="button" aria-label="Next"><img src="assets/arrow-right.svg" alt=""></button></div></div>
-  <div class="relgrid"><article class="pcard hh" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-4.png" alt="Pre-loved dress" loading="lazy"><button class="heart" aria-label="Save"><picture><source media="(max-width:899px)" srcset="assets/heart-card-m.svg"><img src="assets/heart-card.svg" alt=""></picture></button><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 2300</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Sylhet</span></div></div></article><article class="pcard" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-2.png" alt="Pre-loved dress" loading="lazy"><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 800</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Rajshahi</span></div></div></article><article class="pcard" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-5.png" alt="Pre-loved dress" loading="lazy"><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 800</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Rajshahi</span></div></div></article><article class="pcard hm" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-6.png" alt="Pre-loved dress" loading="lazy"><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 800</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Rajshahi</span></div></div></article></div>
+  <div class="relgrid" id="relgrid"><article class="pcard hh" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-4.png" alt="Pre-loved dress" loading="lazy"><button class="heart" aria-label="Save"><picture><source media="(max-width:899px)" srcset="assets/heart-card-m.svg"><img src="assets/heart-card.svg" alt=""></picture></button><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 2300</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Sylhet</span></div></div></article><article class="pcard" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-2.png" alt="Pre-loved dress" loading="lazy"><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 800</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Rajshahi</span></div></div></article><article class="pcard" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-5.png" alt="Pre-loved dress" loading="lazy"><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 800</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Rajshahi</span></div></div></article><article class="pcard hm" data-href="details.html"><div class="pt"><div class="pthumb"><img class="pimg" src="assets/lst-6.png" alt="Pre-loved dress" loading="lazy"><span class="badge">Excelent</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div><div class="info"><h3>Polo Sweater in Cotton Merino</h3><div class="meta"><span class="price">৳ 800</span><span class="loc"><picture><source media="(max-width:899px)" srcset="assets/pin-card-m.svg"><img src="assets/pin-card.svg" alt=""></picture>Rajshahi</span></div></div></article></div>
   <a class="btn btn-primary relbtn" href="listing.html">View All Listings</a>
 </div></section>
 <section class="csec"><div class="pw"><div class="cta2"><img src="assets/cta-bg-d.png" alt=""><div class="cta2-in"><div class="tx"><h2>Sell Your Dress – Post Free Ad</h2><p>It takes less than 2 minutes to create your listing and reach thousands of buyers</p></div><a class="btn" href="#"><span>Post Free Ad Now</span><img src="assets/arrow-up-right.svg" alt=""></a></div></div></div></section>
@@ -70,7 +70,7 @@
     <div class="social"><a href="#" aria-label="Facebook"><img src="assets/social-1.svg" alt=""></a><a href="#" aria-label="Instagram"><img src="assets/social-2.svg" alt=""></a><a href="#" aria-label="YouTube"><img src="assets/social-3.svg" alt=""></a></div>
    </div>
    <div class="fcols">
-    <div class="fcol"><h4>Quick Links</h4><ul><li><a href="#">Browse All Dresses</a></li><li><a href="#">Post Free Ad</a></li><li><a href="#">How It Works</a></li><li><a href="#">Safety Tips</a></li></ul></div>
+    <div class="fcol"><h4>Quick Links</h4><ul><li><a href="listing.html">Browse All Dresses</a></li><li><a href="#">Post Free Ad</a></li><li><a href="#">How It Works</a></li><li><a href="#">Safety Tips</a></li></ul></div>
     <div class="fcol"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Contact Us</a></li><li><a href="#">Report Issue</a></li><li><a href="#">FAQs</a></li></ul></div>
     <div class="fcol"><h4>Legal</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul></div>
    </div>
@@ -79,13 +79,6 @@
   <div class="fbot"><p class="copy">© 2026 DressChai · All rights reserved.</p><a class="wa" href="#"><img src="assets/whatsapp.svg" alt="">Contact Whatsapp</a></div>
  </div>
 </footer>
-<script>
-(function(){
-  [].forEach.call(document.querySelectorAll('.pcard'),function(c){c.addEventListener('click',function(e){if(e.target.closest('.heart'))return;location.href=c.getAttribute('data-href')||'details.html';});});
-  [].forEach.call(document.querySelectorAll('.pcard .heart'),function(b){b.addEventListener('click',function(e){e.stopPropagation();b.classList.toggle('on');});});
-  var g=document.getElementById('gimg');
-  [].forEach.call(document.querySelectorAll('.gth'),function(t){t.addEventListener('click',function(){g.src=t.querySelector('img').src;});});
-})();
-</script>
+<script src="data.js?v=2"></script><script src="cardhtml.js?v=2"></script><script src="details.js?v=2"></script>
 </body>
 </html>

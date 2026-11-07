@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&family=Hind+Siliguri:wght@400;600;700&family=Instrument+Serif&family=Urbanist:wght@600&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -19,13 +19,13 @@
       <a class="ibtn mob-only" href="#" aria-label="Menu"><img src="assets/m-menu.svg" alt=""></a>
       <a class="logo" href="/"><picture><source media="(max-width:899px)" srcset="assets/logo-m.svg"><img src="assets/logo.svg" alt="DressChai"></picture></a>
       <div class="nav-search">
-        <label class="pill search"><img src="assets/search-sm.svg" alt=""><span>Search dresses...</span></label>
+        <form class="pill search" action="listing.html" method="get" role="search"><img src="assets/search-sm.svg" alt=""><input type="search" name="q" placeholder="Search dresses..." aria-label="Search dresses"></form>
         <div class="pill loc"><div class="in"><img src="assets/map-pin-sm.svg" alt=""><span>Dhaka</span></div><img src="assets/chevron-down.svg" alt=""></div>
       </div>
     </div>
     <div class="nav-r">
       <a class="lang" href="#"><img src="assets/globe.svg" alt="">বাংলা</a>
-      <a class="ibtn mob-only" href="#" aria-label="Search"><img src="assets/m-search.svg" alt=""></a>
+      <a class="ibtn mob-only" href="listing.html" aria-label="Search"><img src="assets/m-search.svg" alt=""></a>
       <a class="ibtn" href="#" aria-label="Account"><picture><source media="(max-width:899px)" srcset="assets/m-user.svg"><img src="assets/user.svg" alt=""></picture></a>
       <a class="ibtn" href="#" aria-label="Saved"><picture><source media="(max-width:899px)" srcset="assets/m-heart.svg"><img src="assets/heart-nav.svg" alt=""></picture><span class="dot"></span></a>
     </div>
@@ -53,12 +53,12 @@
 <section class="sec">
   <div class="wrap">
     <div class="sec-head" style="max-width:597px;margin:0 auto"><h2>Find Your Perfect Style</h2><p>Discover dresses by occasion and style, carefully organized to help you find the perfect look for every moment</p></div>
-    <div class="cats"><a href="#" class="cat active"><span class="cimg"><img src="assets/cat-1.png" alt=""></span><span class="ctext"><span class="cname">Vacation</span><img class="line" src="assets/cat-line.svg" alt=""><span class="cnt m-only-cnt">3000+ ad</span></span></a>
-<a href="#" class="cat"><span class="cimg"><img src="assets/cat-2.png" alt=""></span><span class="ctext"><span class="cname">Wedding</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">1200+ ad</span></span></span></a>
-<a href="#" class="cat"><span class="cimg"><img src="assets/cat-3.png" alt=""></span><span class="ctext"><span class="cname">Saree</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">2000+ ad</span></span></span></a>
-<a href="#" class="cat"><span class="cimg"><img src="assets/cat-4.png" alt=""></span><span class="ctext"><span class="cname">Kameez</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">5000+ ad</span></span></span></a>
-<a href="#" class="cat"><span class="cimg"><span class="crop"><img src="assets/cat-5.png" alt=""></span></span><span class="ctext"><span class="cname">Western</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">800+ ad</span></span></span></a>
-<a href="#" class="cat"><span class="cimg"><img src="assets/cat-6.png" alt=""></span><span class="ctext"><span class="cname">Menz</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">600+ ad</span></span></span></a>
+    <div class="cats"><a href="listing.html?category=Vacation" class="cat active"><span class="cimg"><img src="assets/cat-1.png" alt=""></span><span class="ctext"><span class="cname">Vacation</span><img class="line" src="assets/cat-line.svg" alt=""><span class="cnt m-only-cnt">3000+ ad</span></span></a>
+<a href="listing.html?category=Wedding" class="cat"><span class="cimg"><img src="assets/cat-2.png" alt=""></span><span class="ctext"><span class="cname">Wedding</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">1200+ ad</span></span></span></a>
+<a href="listing.html?category=Saree" class="cat"><span class="cimg"><img src="assets/cat-3.png" alt=""></span><span class="ctext"><span class="cname">Saree</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">2000+ ad</span></span></span></a>
+<a href="listing.html?category=Kameez" class="cat"><span class="cimg"><img src="assets/cat-4.png" alt=""></span><span class="ctext"><span class="cname">Kameez</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">5000+ ad</span></span></span></a>
+<a href="listing.html?category=Western" class="cat"><span class="cimg"><span class="crop"><img src="assets/cat-5.png" alt=""></span></span><span class="ctext"><span class="cname">Western</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">800+ ad</span></span></span></a>
+<a href="listing.html?category=Menz" class="cat"><span class="cimg"><img src="assets/cat-6.png" alt=""></span><span class="ctext"><span class="cname">Menz</span><span class="cnt"><span class="d">3000+ ad</span><span class="m">600+ ad</span></span></span></a>
 </div>
   </div>
 </section>
@@ -120,7 +120,7 @@
     <div class="social"><a href="#" aria-label="Facebook"><img src="assets/social-1.svg" alt=""></a><a href="#" aria-label="Instagram"><img src="assets/social-2.svg" alt=""></a><a href="#" aria-label="YouTube"><img src="assets/social-3.svg" alt=""></a></div>
    </div>
    <div class="fcols">
-    <div class="fcol"><h4>Quick Links</h4><ul><li><a href="#">Browse All Dresses</a></li><li><a href="#">Post Free Ad</a></li><li><a href="#">How It Works</a></li><li><a href="#">Safety Tips</a></li></ul></div>
+    <div class="fcol"><h4>Quick Links</h4><ul><li><a href="listing.html">Browse All Dresses</a></li><li><a href="#">Post Free Ad</a></li><li><a href="#">How It Works</a></li><li><a href="#">Safety Tips</a></li></ul></div>
     <div class="fcol"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Contact Us</a></li><li><a href="#">Report Issue</a></li><li><a href="#">FAQs</a></li></ul></div>
     <div class="fcol"><h4>Legal</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul></div>
    </div>
@@ -130,6 +130,7 @@
  </div>
 </footer>
 
+<script src="data.js?v=2"></script>
 <script>
 (function(){
   var cards=[].slice.call(document.querySelectorAll('.tcard')),i=0;
@@ -137,7 +138,11 @@
   [].forEach.call(document.querySelectorAll('.prev'),function(b){b.addEventListener('click',function(){show(i-1)})});
   [].forEach.call(document.querySelectorAll('.next'),function(b){b.addEventListener('click',function(){show(i+1)})});
   [].forEach.call(document.querySelectorAll('.heart'),function(b){b.addEventListener('click',function(e){e.stopPropagation();b.classList.toggle('on')})});
-  [].forEach.call(document.querySelectorAll('.card'),function(c){c.style.cursor='pointer';c.addEventListener('click',function(){location.href='details.html'})});
+  [].forEach.call(document.querySelectorAll('.card'),function(c){
+    var price=c.querySelector('.price').textContent.replace(/\s+/g,' ').trim(),loc=c.querySelector('.loc').textContent.trim(),id=1;
+    for(var i=0;i<window.DRESSES.length;i++){var d=window.DRESSES[i];if(d.priceText.replace(/\s+/g,' ')===price&&d.loc===loc){id=d.id;break;}}
+    c.style.cursor='pointer';c.addEventListener('click',function(e){if(e.target.closest('.heart'))return;location.href='details.html?id='+id;});
+  });
 })();
 </script>
 </body>

@@ -197,3 +197,6 @@
   .lgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .dtop{gap:40px}
 }
+
+.empty{width:100%;text-align:center;padding:48px 0;color:var(--d50);font-family:var(--ui);font-size:16px}
+.empty[hidden]{display:none}
