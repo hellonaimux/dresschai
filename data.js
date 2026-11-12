@@ -31,6 +31,22 @@
       badge: 'Excelent', posted: floral ? '1 day ago' : (i % 6 + 1) + ' days ago', desc: DESC, seller: SELLERS[i % SELLERS.length]
     };
   });
+  var TAGS = ['vacation summer casual', 'party', 'winter', 'casual summer', 'wedding', 'ethnic', 'vacation', 'summer'];
+  D.forEach(function (x, i) { x.tags = TAGS[i % TAGS.length]; });
+  // Featured dresses shown on the new homepage
+  var FEAT = [
+    ['Chic Sleeveless Knit Dress', 42, 2249, 'Uttara'], ['Elegant Sleeveless Ribbed Dress', 38, 2799, 'Dhaka'],
+    ['Stylish Sleeveless Ribbed Dress', 36, 2499, 'Basundhara'], ['Trendy Sleeveless Ribbed Dress', 44, 1949, 'Rajshahi'],
+    ['Fashionable Sleeveless Ribbed Dress', 34, 2399, 'Malibag']
+  ];
+  var CITY = { Uttara: 'Dhaka', Dhaka: 'Dhaka', Basundhara: 'Dhaka', Rajshahi: 'Rajshahi', Malibag: 'Dhaka' };
+  FEAT.forEach(function (f, i) {
+    D.push({
+      id: 25 + i, img: 'home-feat.png', priceText: '৳ ' + String(f[2]).replace(/\B(?=(\d{3})+$)/g, ','), price: f[2], loc: f[3], region: REGION[CITY[f[3]]] || CITY[f[3]],
+      area: f[3] + ', ' + (CITY[f[3]] === 'Dhaka' ? 'Dhaka' : CITY[f[3]]), title: f[0], detailTitle: f[0], cat: 'Party Wear', cond: 'Like New', size: String(f[1]),
+      brand: BRANDS[i % BRANDS.length], badge: 'Excelent', posted: (i + 1) + ' days ago', desc: DESC, seller: SELLERS[i % SELLERS.length], tags: 'casual summer featured'
+    });
+  });
   window.DRESSES = D;
   window.DC = { CATS: CATS, byId: function (id) { for (var i = 0; i < D.length; i++) if (D[i].id === +id) return D[i]; return null; } };
 })();
