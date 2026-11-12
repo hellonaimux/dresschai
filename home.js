@@ -13,6 +13,18 @@
   // featured cards -> details page, hearts
   $all('.h-fc').forEach(function (c) { c.addEventListener('click', function (e) { if (e.target.closest('.hb')) return; location.href = 'details.html?id=' + c.getAttribute('data-id'); }); });
   $all('.h-fc .hb').forEach(function (b) { b.addEventListener('click', function (e) { e.stopPropagation(); b.classList.toggle('on'); }); });
+  // mobile: trust bar loops endlessly (items are duplicated so the loop has no gap)
+  var track = document.querySelector('.h-track');
+  if (track) { $all('.h-ti', track).forEach(function (it) { var c = it.cloneNode(true); c.className += ' h-clone'; c.setAttribute('aria-hidden', 'true'); track.appendChild(c); }); }
+  // featured row: drag with the mouse as well as swipe with touch
+  var drag = document.querySelector('.h-row');
+  if (drag) {
+    var down = false, sx = 0, sl = 0, moved = false;
+    drag.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = drag.scrollLeft; });
+    window.addEventListener('pointermove', function (e) { if (!down) return; var dx = e.clientX - sx; if (Math.abs(dx) > 4) { moved = true; drag.classList.add('drag'); } if (moved) drag.scrollLeft = sl - dx; });
+    window.addEventListener('pointerup', function () { if (!down) return; down = false; setTimeout(function () { drag.classList.remove('drag'); }, 0); });
+    drag.addEventListener('click', function (e) { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+  }
   // mobile carousel dots
   var row = document.querySelector('.h-row'), dots = $all('.h-dots i');
   function dot() {
