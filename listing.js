@@ -5,6 +5,8 @@
   var qs = new URLSearchParams(location.search);
   var MAP = { 'Wedding': ['Weeding Wear'], 'Party': ['Party Wear'], 'Ethnic': ['Saree', 'Lehenga'], 'Mens': ["Men's Tuxedo"], 'Saree': ['Saree'], 'Menz': ["Men's Tuxedo"] };
   var q = (qs.get('q') || '').trim().toLowerCase();
+  function nz(s) { return String(s || '').toLowerCase().replace('chattogram', 'chattagram'); }
+  var locQ = nz((qs.get('loc') || '').trim());
   var urlCat = qs.get('category');
   if (urlCat) {
     var want = MAP[urlCat] || [urlCat];
@@ -18,6 +20,7 @@
     var mn = parseFloat(document.getElementById('pmin').value), mx = parseFloat(document.getElementById('pmax').value);
     var out = all.filter(function (d) {
       if (q && (d.title + ' ' + d.loc + ' ' + d.cat + ' ' + d.brand + ' ' + (d.tags || '')).toLowerCase().indexOf(q) < 0) return false;
+      if (locQ && !(nz(d.region) === locQ || nz(d.loc) === locQ || nz(d.area).indexOf(locQ) > -1)) return false;
       if (cats.length && cats.indexOf(d.cat) < 0) return false;
       if (conds.length && conds.indexOf(d.cond) < 0) return false;
       if (sizes.length && sizes.indexOf(d.size) < 0) return false;

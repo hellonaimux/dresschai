@@ -9,23 +9,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hind+Siliguri:wght@400;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
-<link rel="stylesheet" href="home.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="home.css?v=5">
+<link rel="stylesheet" href="nav.css?v=5">
 </head>
 <body class="home">
 
 <header class="h-top"><div class="hw">
   <div class="h-nav-l">
+    <a class="h-ib h-mb" href="#" data-menu-open aria-label="Menu"><img src="assets/m-menu.svg" alt=""></a>
     <a class="h-logo" href="/"><img src="assets/logo-home.svg" alt="DressChai"></a>
     <div class="h-sw">
       <form class="h-pill s" action="listing.html" method="get" role="search"><img src="assets/search-sm.svg" alt=""><input type="search" name="q" placeholder="Search dresses..." aria-label="Search dresses"></form>
-      <div class="h-pill l"><div class="in"><img src="assets/map-pin-sm.svg" alt=""><span>Dhaka</span></div><img src="assets/chevron-down.svg" alt=""></div>
+      <div class="h-pill l" data-loc-open role="button" tabindex="0" aria-label="Choose location"><div class="in"><img src="assets/map-pin-sm.svg" alt=""><span data-loc-label>Dhaka</span></div><img src="assets/chevron-down.svg" alt=""></div>
     </div>
   </div>
   <div class="h-actions">
-    <a class="h-ib h-mb" href="listing.html" aria-label="Search"><img src="assets/search-sm.svg" alt=""></a>
-    <a class="h-ib" href="#" data-soon aria-label="Account"><span class="h-ic u h-dk"><img src="assets/user-h.svg" alt=""></span><img class="h-mb" src="assets/user-m.svg" alt=""></a>
-    <a class="h-ib" href="#" data-soon aria-label="Saved"><span class="h-ic h h-dk"><img src="assets/heart-h.svg" alt=""></span><img class="h-mb" src="assets/heart-m.svg" alt=""><span class="h-dot"></span></a>
+    <a class="h-ib h-mb" href="#" data-loc-open data-loc-icon aria-label="Search location"><img src="assets/m-search.svg" alt=""></a>
+    <a class="h-ib" href="#" data-soon aria-label="Account"><span class="h-ic u h-dk"><img src="assets/user-h.svg" alt=""></span><img class="h-mb" src="assets/m-user.svg" alt=""></a>
+    <a class="h-ib" href="#" data-soon aria-label="Saved"><span class="h-ic h h-dk"><img src="assets/heart-h.svg" alt=""></span><img class="h-mb" src="assets/m-heart.svg" alt=""><span class="h-dot"></span></a>
   </div>
 </div></header>
 
@@ -71,7 +73,8 @@
  </div>
 </footer>
 
-<script src="data.js?v=4"></script>
-<script src="home.js?v=4"></script>
+<script src="data.js?v=5"></script>
+<script src="home.js?v=5"></script>
+<script src="nav.js?v=5"></script>
 </body>
 </html>
