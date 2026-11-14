@@ -1,6 +1,7 @@
 /* Sample listings. Later this file is replaced by real data from the backend/database. */
 (function () {
-  var AREA = { Dhaka: 'Dhanmondi, Dhaka', Chattagram: 'GEC Circle, Chattagram', Rajshahi: 'Shaheb Bazar, Rajshahi', Sylhet: 'Zindabazar, Sylhet' };
+  var THANA = { Dhaka: 'Dhanmondi', Chattagram: 'Panchlaish', Rajshahi: 'Boalia', Sylhet: 'Kotwali' };
+  var AREA = { Dhaka: 'Dhanmondi, Dhaka', Chattagram: 'Panchlaish, Chattagram', Rajshahi: 'Boalia, Rajshahi', Sylhet: 'Kotwali, Sylhet' };
   var REGION = { Dhaka: 'Dhaka', Chattagram: 'Chattogram', Rajshahi: 'Rajshahi', Sylhet: 'Sylhet' };
   var SELLERS = [
     { name: 'Fatiama Rahman', city: 'Dhaka', avatar: 'avatar-1.png', rating: 4.8, reviews: 3, listings: 5, since: 2023 },
@@ -24,7 +25,7 @@
   var D = base.map(function (b, i) {
     var floral = b[0] === 'lst-2.png';
     return {
-      id: i + 1, img: b[0], priceText: b[1], price: b[2], loc: b[3], region: REGION[b[3]], area: AREA[b[3]],
+      id: i + 1, img: b[0], priceText: b[1], price: b[2], loc: b[3], region: REGION[b[3]], area: AREA[b[3]], div: b[3], dist: b[3], thana: THANA[b[3]],
       title: 'Polo Sweater in Cotton Merino', detailTitle: floral ? 'Casual Summer Dress' : 'Polo Sweater in Cotton Merino',
       cat: floral ? 'Weeding Wear' : CATS[(i * 5) % CATS.length], cond: floral ? 'Like New' : CONDS[(i * 3) % CONDS.length],
       size: floral ? '36' : SIZES[(i * 7) % SIZES.length], brand: floral ? 'Aarong' : BRANDS[i % BRANDS.length],
@@ -33,18 +34,20 @@
   });
   var TAGS = ['vacation summer casual', 'party', 'winter', 'casual summer', 'wedding', 'ethnic', 'vacation', 'summer'];
   D.forEach(function (x, i) { x.tags = TAGS[i % TAGS.length]; });
-  // Featured dresses shown on the new homepage
+  // Featured dresses shown on the homepage: name, size, price, card location, division, district, thana
   var FEAT = [
-    ['Chic Sleeveless Knit Dress', 42, 2249, 'Uttara'], ['Elegant Sleeveless Ribbed Dress', 38, 2799, 'Dhaka'],
-    ['Stylish Sleeveless Ribbed Dress', 36, 2499, 'Basundhara'], ['Trendy Sleeveless Ribbed Dress', 44, 1949, 'Rajshahi'],
-    ['Fashionable Sleeveless Ribbed Dress', 34, 2399, 'Malibag']
+    ['Chic Sleeveless Knit Dress', 42, 2249, 'Uttara', 'Dhaka', 'Dhaka', 'Uttara West'], ['Elegant Sleeveless Ribbed Dress', 38, 2799, 'Dhaka', 'Dhaka', 'Dhaka', 'Dhanmondi'],
+    ['Stylish Sleeveless Ribbed Dress', 36, 2499, 'Basundhara', 'Dhaka', 'Dhaka', 'Vatara'], ['Trendy Sleeveless Ribbed Dress', 44, 1949, 'Rajshahi', 'Rajshahi', 'Rajshahi', 'Boalia'],
+    ['Fashionable Sleeveless Ribbed Dress', 34, 2399, 'Malibag', 'Dhaka', 'Dhaka', 'Khilgaon'],
+    ['Classic Wrap Midi Dress', 40, 2099, 'Gulshan', 'Dhaka', 'Dhaka', 'Gulshan'], ['Floral Summer Maxi Dress', 36, 1699, 'Khulshi', 'Chattagram', 'Chattagram', 'Khulshi'],
+    ['Elegant Satin Evening Dress', 38, 3299, 'Sylhet', 'Sylhet', 'Sylhet', 'Kotwali'], ['Casual Linen Shirt Dress', 34, 1399, 'Mirpur', 'Dhaka', 'Dhaka', 'Mirpur'],
+    ['Cozy Knit Sweater Dress', 42, 1799, 'Gazipur', 'Dhaka', 'Gazipur', 'Gazipur Sadar']
   ];
-  var CITY = { Uttara: 'Dhaka', Dhaka: 'Dhaka', Basundhara: 'Dhaka', Rajshahi: 'Rajshahi', Malibag: 'Dhaka' };
   FEAT.forEach(function (f, i) {
     D.push({
-      id: 25 + i, img: 'home-feat.png', priceText: '৳ ' + String(f[2]).replace(/\B(?=(\d{3})+$)/g, ','), price: f[2], loc: f[3], region: REGION[CITY[f[3]]] || CITY[f[3]],
-      area: f[3] + ', ' + (CITY[f[3]] === 'Dhaka' ? 'Dhaka' : CITY[f[3]]), title: f[0], detailTitle: f[0], cat: 'Party Wear', cond: 'Like New', size: String(f[1]),
-      brand: BRANDS[i % BRANDS.length], badge: 'Excelent', posted: (i + 1) + ' days ago', desc: DESC, seller: SELLERS[i % SELLERS.length], tags: 'casual summer featured'
+      id: 25 + i, img: 'home-feat.png', priceText: '\u09f3 ' + String(f[2]).replace(/\B(?=(\d{3})+$)/g, ','), price: f[2], loc: f[3], region: f[4] === 'Chattagram' ? 'Chattogram' : f[4],
+      area: f[6] + ', ' + f[5], div: f[4], dist: f[5], thana: f[6], title: f[0], detailTitle: f[0], cat: 'Party Wear', cond: 'Like New', size: String(f[1]),
+      brand: BRANDS[i % BRANDS.length], badge: 'Excelent', posted: (i % 6 + 1) + ' days ago', desc: DESC, seller: SELLERS[i % SELLERS.length], tags: 'casual summer featured'
     });
   });
   window.DRESSES = D;
