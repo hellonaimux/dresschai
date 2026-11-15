@@ -16,18 +16,22 @@
   var D = window.DRESSES || [];
   function byId(id) { return window.DC.byId(id); }
   function card(d, on) {
-    return '<article class="h-fc" data-id="' + d.id + '"><div class="im"><img src="assets/home-feat.png" alt="' + d.title + '" loading="lazy">' +
+    return '<article class="h-fc" data-id="' + d.id + '"><div class="im"><img src="assets/' + d.img + '" alt="' + d.title + '" loading="lazy">' +
       '<button class="hb' + (on ? ' on' : '') + '" type="button" aria-label="Save"><picture class="off-ic"><source media="(min-width:900px)" srcset="assets/heart-card.svg"><img src="assets/heart-card-m.svg" alt=""></picture><img class="on-ic" src="assets/heart-on.svg" alt=""></button></div>' +
       '<div class="bd"><div class="t"><b>' + d.title + '</b><div><span class="sz">Size - ' + d.size + '</span><span class="pr">' + d.priceText + '</span></div></div><div class="lc"><img src="assets/pin-h.svg" alt=""><span>' + d.loc + '</span></div></div></article>';
   }
   var feat = D.filter(function (d) { return d.id >= 25; });
   var row = document.getElementById('featRow');
   if (row) row.innerHTML = feat.map(function (d, i) { return card(d, i === 0); }).join('');
-  var grid = document.getElementById('listGrid');
-  if (grid) { // the design repeats five dresses: Elegant, Elegant, Stylish, Trendy, Fashionable
-    var seq = [26, 26, 27, 28, 29], h = '';
-    for (var r = 0; r < 4; r++) seq.forEach(function (id) { h += card(byId(id), false); });
-    grid.innerHTML = h;
+  var blocks = document.getElementById('listBlocks');
+  if (blocks) {
+    var BL = [['Clothings', 'clothings', 100], ['Weeding', 'weeding', 106], ['Bags', 'bags', 112], ['Shoes', 'shoes', 118]], bh = '';
+    BL.forEach(function (b) {
+      var cs = '';
+      for (var i = 0; i < 6; i++) { var it = byId(b[2] + i); cs += card(it, false).replace('class="h-fc"', 'class="h-fc' + (i === 5 ? ' six' : '') + '"'); }
+      bh += '<div class="h-blk"><div class="h-blk-h"><h3>' + b[0] + '</h3><a class="va-d" href="listing.html?q=' + b[1] + '">View All</a></div><div class="h-bgrid">' + cs + '</div><a class="va-m" href="listing.html?q=' + b[1] + '">View All ' + b[0] + '</a></div>';
+    });
+    blocks.innerHTML = bh;
   }
   $all('.h-fc').forEach(function (c) { c.addEventListener('click', function (e) { if (e.target.closest('.hb')) return; location.href = 'details.html?id=' + c.getAttribute('data-id'); }); });
   $all('.h-fc .hb').forEach(function (b) { b.addEventListener('click', function (e) { e.stopPropagation(); b.classList.toggle('on'); }); });

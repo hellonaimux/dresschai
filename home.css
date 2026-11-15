@@ -170,3 +170,23 @@ body.home{font-family:'General Sans',system-ui,-apple-system,'Segoe UI',sans-ser
   .h-arr img{width:24px;height:24px;display:block}
   .h-lgrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:40px 24px}
 }
+
+/* ---- listing blocks (Clothings / Weeding / Bags / Shoes) ---- */
+.h-blocks{display:flex;flex-direction:column;gap:28px;width:100%}
+.h-blk{display:flex;flex-direction:column;gap:24px;width:100%}
+.h-blk-h{display:flex;align-items:center;justify-content:space-between}
+.h-blk h3{font-family:'Anton','Impact',sans-serif;font-weight:400;font-size:20px;line-height:1.2;letter-spacing:0;color:#000}
+.h-blk a{font-size:16px;line-height:1;color:#0e0e11;text-decoration:underline;text-underline-offset:2px}
+.h-blk .va-d{display:none}
+.h-blk .va-m{display:block;text-align:center}
+.h-bgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
+.h-bgrid .h-fc{flex:none;min-width:0;width:auto}
+@media (min-width:900px){
+  .h-blocks{gap:56px}
+  .h-blk{gap:40px}
+  .h-blk h3{font-size:24px}
+  .h-blk .va-d{display:block}
+  .h-blk .va-m{display:none}
+  .h-bgrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+  .h-bgrid .h-fc.six{display:none}
+}

@@ -18,14 +18,15 @@
   /* ---------- location popup: Division > District > Thana (one popup, back button) ---------- */
   var menu = document.createElement('div'); menu.className = 'loc-menu'; menu.setAttribute('role', 'dialog'); menu.setAttribute('aria-label', 'Choose location');
   menu.innerHTML = '<div class="lm-h"><button class="lm-back" type="button" aria-label="Back" hidden><img src="assets/lp-back.svg" alt=""></button><button class="lm-t" type="button">All Bangladesh</button><button class="lm-x" type="button" aria-label="Close"><img src="assets/lp-x.svg" alt=""></button></div>' +
+    '<form class="lm-dress" action="listing.html" method="get" role="search"><img src="assets/lp-search.svg" alt=""><input type="search" name="q" enterkeyhint="search" placeholder="Search dresses..." autocomplete="off" aria-label="Search dresses"></form>' +
     '<label class="lm-s"><img src="assets/lp-search.svg" alt=""><input type="search" placeholder="Search city or district" autocomplete="off" aria-label="Search city or district"></label><div class="lm-list"></div>';
   document.body.appendChild(menu);
-  var back = menu.querySelector('.lm-back'), title = menu.querySelector('.lm-t'), xb = menu.querySelector('.lm-x'), input = menu.querySelector('input'), list = menu.querySelector('.lm-list');
+  var back = menu.querySelector('.lm-back'), title = menu.querySelector('.lm-t'), xb = menu.querySelector('.lm-x'), input = menu.querySelector('.lm-s input'), list = menu.querySelector('.lm-list');
   var path = [], trigger = null, trigImg = null, trigSrc = '';
 
-  function go(p) {
-    if (!p.length) { store('All Bangladesh'); location.href = 'listing.html'; return; }
-    var v = p.join('/'); store(v); location.href = 'listing.html?loc=' + encodeURIComponent(v);
+  function go(p) {   // choosing a place only SETS the location (no search); search happens when a dress name is submitted
+    if (!p.length) { store('All Bangladesh'); savedPath = []; } else { store(p.join('/')); savedPath = p.slice(); }
+    setLabels(); close();
   }
   function row(label, attrs, hasKids, on, small) {
     return '<button class="lm-row' + (hasKids ? ' has' : '') + (on ? ' on' : '') + '" type="button" ' + attrs + '>' + esc(label) + (small ? '<small>' + esc(small) + '</small>' : '') + (hasKids ? '<img src="assets/lp-next.svg" alt="">' : '') + '</button>';
@@ -70,8 +71,7 @@
     menu.style.height = ''; menu.style.left = Math.max(16, Math.min(r.left, window.innerWidth - 433 - 16)) + 'px'; menu.style.top = (r.bottom + 8) + 'px';
   }
   function open(t) {
-    trigger = t; input.value = ''; path = savedPath.length ? savedPath.slice(0, Math.min(savedPath.length - 1, 2)) : []; // open where the person left off
-    if (path.length > 2) path = path.slice(0, 2);
+    trigger = t; input.value = ''; path = [];   // always opens at the first screen (All Bangladesh)
     render(); menu.classList.add('open'); place();
     trigImg = t.querySelector('img'); if (t.hasAttribute('data-loc-icon') && trigImg) { trigSrc = trigImg.getAttribute('src'); trigImg.setAttribute('src', 'assets/search-active.svg'); }
   }
@@ -97,6 +97,15 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { close(); closeDr(); } });
   window.addEventListener('scroll', function () { if (menu.classList.contains('open') && !mq.matches) close(); }, { passive: true });
   window.addEventListener('resize', function () { if (menu.classList.contains('open')) close(); });
+
+  /* ---------- dress search forms carry the chosen location ---------- */
+  [].forEach.call(document.querySelectorAll('form[action="listing.html"]'), function (f) {
+    f.addEventListener('submit', function () {
+      var v = stored(), hid = f.querySelector('input[name=loc]');
+      if (v && v !== 'All Bangladesh') { if (!hid) { hid = document.createElement('input'); hid.type = 'hidden'; hid.name = 'loc'; f.appendChild(hid); } hid.value = v; }
+      else if (hid) hid.parentNode.removeChild(hid);
+    });
+  });
 
   /* ---------- hamburger drawer (mobile) ---------- */
   var cats = [['Wedding', 'listing.html?category=Wedding'], ['Party', 'listing.html?category=Party'], ['Ethnic', 'listing.html?category=Ethnic'], ['Mens', 'listing.html?category=Mens'], ['Vacation', 'listing.html?q=vacation'], ['Winter', 'listing.html?q=winter'], ['Summer', 'listing.html?q=summer'], ['Casual', 'listing.html?q=casual']];
