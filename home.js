@@ -8,9 +8,8 @@
   /* ---- categories: Vacation is highlighted by default, hover moves the highlight ---- */
   var cats = $all('.h-cat'), first = cats[0];
   function act(c) { cats.forEach(function (x) { x.classList.toggle('act', x === c); }); }
-  act(first);
   cats.forEach(function (c) { c.addEventListener('mouseenter', function () { act(c); }); c.addEventListener('focus', function () { act(c); }); });
-  var wrap = document.querySelector('.h-cats'); if (wrap) wrap.addEventListener('mouseleave', function () { act(first); });
+  var wrap = document.querySelector('.h-cats'); if (wrap) wrap.addEventListener('mouseleave', function () { act(null); });
 
   /* ---- product cards (featured row + listing grid) rendered from data.js ---- */
   var D = window.DRESSES || [];
@@ -25,7 +24,7 @@
   if (row) row.innerHTML = feat.map(function (d, i) { return card(d, i === 0); }).join('');
   var blocks = document.getElementById('listBlocks');
   if (blocks) {
-    var BL = [['Clothings', 'clothings', 100], ['Weeding', 'weeding', 106], ['Bags', 'bags', 112], ['Shoes', 'shoes', 118]], bh = '';
+    var BL = [['Clothings', 'clothings', 100], ['Weeding', 'weeding', 106], ['Ethnic Wear', 'ethnic', 112], ['Shoes', 'shoes', 118]], bh = '';
     BL.forEach(function (b) {
       var cs = '';
       for (var i = 0; i < 6; i++) { var it = byId(b[2] + i); cs += card(it, false).replace('class="h-fc"', 'class="h-fc' + (i === 5 ? ' six' : '') + '"'); }

@@ -60,7 +60,7 @@ body.home{font-family:'General Sans',system-ui,-apple-system,'Segoe UI',sans-ser
 .h-sec{padding-top:var(--h-py);padding-bottom:var(--h-py)}
 .h-sec .hw{display:flex;flex-direction:column;align-items:center;gap:32px}
 .h-head{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;width:100%}
-.h-head h2{font-size:40px;line-height:48px}
+.h-head h2{font-size:32px;line-height:1.2;letter-spacing:-1px}
 .h-head p{font-size:14px;line-height:1.5;color:var(--h-mute)}
 .h-cats{display:flex;flex-wrap:wrap;gap:16px 8px;justify-content:center;width:100%}
 .h-cat{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1 0 76px;min-width:76px;color:#0e0e11}
@@ -68,7 +68,8 @@ body.home{font-family:'General Sans',system-ui,-apple-system,'Segoe UI',sans-ser
 .h-cat .h-ph img,.h-cat .h-ph picture{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .h-cat .h-ph::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .2s}
 .h-cat>span:not(.h-ph){font-size:12px;line-height:1.5;text-align:center;width:100%;display:block}
-.h-feat{background:#f4fafd;overflow:hidden}
+.h-feat{background:#fff;overflow:hidden}
+.h-catsec{background:#f4fafd}
 .h-feat .hw{gap:64px}
 .h-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;width:100%;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x pan-y;cursor:grab}
 .h-row.drag{cursor:grabbing;scroll-snap-type:none}
@@ -133,11 +134,11 @@ body.home{font-family:'General Sans',system-ui,-apple-system,'Segoe UI',sans-ser
   .h-sep img{width:16px;height:1px;max-width:none;transform:rotate(90deg)}
   .h-sec .hw{gap:64px}
   .h-head{gap:12px;max-width:814px}
-  .h-head h2{font-size:48px;line-height:58px}
+  .h-head h2{font-size:48px;line-height:58px;letter-spacing:-1.5px}
   .h-head p{font-size:18px;max-width:556px}
   .h-cats{flex-wrap:nowrap;gap:16px;justify-content:space-between}
   .h-cat{flex:1;min-width:0;gap:16px;cursor:pointer}
-  .h-cat>span:not(.h-ph){font-size:20px;line-height:1.2;transition:color .2s}
+  .h-cat>span:not(.h-ph){font-size:18px;line-height:1.5;transition:color .2s}
   .h-cat.act .h-ph::after{background:rgba(0,0,0,.24)}
   .h-cat.act>span:not(.h-ph){color:#ff2989}
   .h-row{gap:24px;cursor:default}
@@ -156,12 +157,15 @@ body.home{font-family:'General Sans',system-ui,-apple-system,'Segoe UI',sans-ser
 .h-fc .hb.on .on-ic{display:block}
 .h-fc .hb.on .off-ic{display:none}
 .h-arr{display:none}
-.h-head h2{max-width:269px}
+.h-feat .h-head h2{max-width:237px}
+.h-sell .h-head h2{max-width:247px}
+.h-catsec .h-head h2{max-width:277px}
+.h-list .h-head h2{max-width:283px}
 .h-lgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
 .h-lgrid .h-fc{flex:none;min-width:0;width:auto}
 .h-list{background:#fff}
 @media (min-width:900px){
-  .h-head h2{max-width:none}
+  .h-sec .h-head h2{max-width:none}
   .h-row{overflow-x:auto;scroll-snap-type:x mandatory;gap:24px}
   .h-row .h-fc{flex:0 0 calc((100% - 96px)/5);min-width:0}
   .h-feat .hw{position:relative}
@@ -189,4 +193,27 @@ body.home{font-family:'General Sans',system-ui,-apple-system,'Segoe UI',sans-ser
   .h-blk .va-m{display:none}
   .h-bgrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
   .h-bgrid .h-fc.six{display:none}
+}
+
+/* ---- Sell on DressChai in 3 Easy Steps ---- */
+.h-sell{background:#2a1b16}
+.h-sell .h-head h2{color:#fff}
+.h-sell .h-head p{color:#cfd0d1}
+.h-steps{display:flex;flex-direction:column;gap:24px;width:100%}
+.h-step{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.h-step .bg{background:#ebf264;color:#2a1b16;padding:2px 8px;border-radius:6px;font-size:14px;line-height:1.5;font-weight:500}
+.h-step .r{display:flex;gap:16px;align-items:center;width:100%}
+.h-step .r img{flex:1 1 0;min-width:0;aspect-ratio:368/245.333;object-fit:cover;border-radius:8px;display:block}
+.h-step .t{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:4px;min-height:66px}
+.h-step .t b{font-family:'Anton','Impact',sans-serif;font-weight:400;font-size:24px;line-height:1.2;color:#fff}
+.h-step .t span{font-weight:400;font-size:14px;line-height:1.5;color:#e7e7e8}
+@media (min-width:900px){
+  .h-steps{flex-direction:row;gap:64px;align-items:flex-start}
+  .h-step{flex:1 1 0;min-width:0;gap:24px}
+  .h-step .bg{padding:4px 10px;border-radius:8px;font-size:16px}
+  .h-step .r{flex-direction:column;align-items:stretch;gap:24px}
+  .h-step .r img{flex:none;width:100%}
+  .h-step .t{flex:none;width:100%}
+  .h-step .t b{font-size:32px}
+  .h-step .t span{font-size:16px}
 }

@@ -45,7 +45,7 @@
   ];
   FEAT.forEach(function (f, i) {
     D.push({
-      id: 25 + i, img: i < 5 ? 'p-feat-' + (i + 1) + '.png' : 'p-clo-' + (i - 4) + '.png', priceText: '\u09f3 ' + String(f[2]).replace(/\B(?=(\d{3})+$)/g, ','), price: f[2], loc: f[3], region: f[4] === 'Chattagram' ? 'Chattogram' : f[4],
+      id: 25 + i, img: i < 5 ? 'n-feat-' + (i + 1) + '.png' : 'n-clo-' + (i - 4) + '.png', priceText: '\u09f3 ' + String(f[2]).replace(/\B(?=(\d{3})+$)/g, ','), price: f[2], loc: f[3], region: f[4] === 'Chattagram' ? 'Chattogram' : f[4],
       area: f[6] + ', ' + f[5], div: f[4], dist: f[5], thana: f[6], title: f[0], detailTitle: f[0], cat: 'Party Wear', cond: 'Like New', size: String(f[1]),
       brand: BRANDS[i % BRANDS.length], badge: 'Excelent', posted: (i % 6 + 1) + ' days ago', desc: DESC, seller: SELLERS[i % SELLERS.length], tags: 'casual summer featured'
     });
@@ -57,12 +57,12 @@
     ['Stylish Sleeveless Ribbed Dress', 36, 2499, 'Basundhara', 'Dhaka', 'Dhaka', 'Vatara'], ['Trendy Sleeveless Ribbed Dress', 44, 1949, 'Rajshahi', 'Rajshahi', 'Rajshahi', 'Boalia'],
     ['Fashionable Sleeveless Ribbed Dress', 34, 2399, 'Malibag', 'Dhaka', 'Dhaka', 'Khilgaon'], ['Fashionable Sleeveless Ribbed Dress', 34, 2399, 'Malibag', 'Dhaka', 'Dhaka', 'Khilgaon']
   ];
-  var BLOCKS = [['clo', 'clothings', 'Party Wear'], ['wed', 'weeding wedding', 'Weeding Wear'], ['bag', 'bags', 'Party Wear'], ['sho', 'shoes', 'Party Wear']];
+  var BLOCKS = [['clo', 'clothings', 'Party Wear'], ['wed', 'weeding wedding', 'Weeding Wear'], ['eth', 'ethnic wear ethnic', 'Saree'], ['sho', 'shoes', 'Party Wear']];
   BLOCKS.forEach(function (b, k) {
     POS.forEach(function (p, j) {
       var pos = (b[0] === 'clo' && j === 5) ? ['Elegant Sleeveless Ribbed Dress', 38, 2799, 'Dhaka', 'Dhaka', 'Dhaka', 'Dhanmondi'] : p;
       D.push({
-        id: 100 + k * 6 + j, img: 'p-' + b[0] + '-' + (j + 1) + '.png', priceText: '\u09f3 ' + String(pos[2]).replace(/\B(?=(\d{3})+$)/g, ','), price: pos[2], loc: pos[3], region: pos[4] === 'Chattagram' ? 'Chattogram' : pos[4],
+        id: 100 + k * 6 + j, img: 'n-' + b[0] + '-' + (j < 5 ? j + 1 : (b[0] === 'clo' ? 2 : 5)) + '.png', priceText: '\u09f3 ' + String(pos[2]).replace(/\B(?=(\d{3})+$)/g, ','), price: pos[2], loc: pos[3], region: pos[4] === 'Chattagram' ? 'Chattogram' : pos[4],
         area: pos[6] + ', ' + pos[5], div: pos[4], dist: pos[5], thana: pos[6], title: pos[0], detailTitle: pos[0], cat: b[2], cond: CONDS[(j + k) % CONDS.length], size: String(pos[1]),
         brand: BRANDS[(j + k) % BRANDS.length], badge: 'Excelent', posted: (j % 6 + 1) + ' days ago', desc: DESC, seller: SELLERS[(j + k) % SELLERS.length], tags: b[1]
       });
